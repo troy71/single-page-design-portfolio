@@ -1,0 +1,702 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/plus-jakarta-sans-v12-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/plus-jakarta-sans-v12-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/plus-jakarta-sans-v12-latin-700.woff2') format('woff2');
+}
+
+/* Fonts */
+:root {
+  --ff-primary: 'Plus Jakarta Sans', sans-serif;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fs-18: 18px;
+  --fs-40: 40px;
+  --lh-28: 28px;
+}
+
+/* Colors */
+:root {
+  --clr-black: hsl(0, 0%, 1%);
+  --clr-gray: hsl(30, 4%, 40%);
+  --clr-off-white: hsl(28, 100%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-red: hsl(7, 69%, 62%);
+  --clr-blue: hsl(252, 66%, 62%);
+  --clr-orange: hsl(28, 80%, 63%);
+  --clr-orange-light: hsl(28, 89%, 67%);
+  --clr--pink: hsl(0, 78%, 79%);
+  --clr-cyan: hsl(172, 46%, 57%);
+  --clr-purple: hsl(314, 45%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+}
+
+picure,
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------- */
+/* Reusables */
+/* --------- */
+.flex {
+  display: flex;
+}
+
+.wrapper {
+  padding-inline: clamp(1rem, calc(0.046rem + 4.071vw), 2rem);
+}
+
+.btn {
+  font-weight: var(--fw-700);
+  color: var(--clr-off-white);
+  padding: clamp(14px, 1.5vw, 16px) clamp(24px, 4vw, 48px);
+  line-height: 1.5;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.block {
+  padding: 1.25rem;
+  color: var(--clr-white);
+  border-radius: .5rem
+}
+
+h2 {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-700);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.content-para {
+  color: var(--clr-gray);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-500);
+  margin-block-start: 20px;
+  line-height: 1.5;
+}
+
+.header-footer__container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1110px;
+  margin: 0 auto;
+  margin-block-start: 1.5rem;
+}
+
+.black-btn {
+  background-color: var(--clr-black);
+  transition: background-color 0.5s ease;
+}
+
+.black-btn:hover {
+  background-color: var(--clr-blue);
+}
+
+.orange-btn {
+  background-color: var(--clr-orange);
+  margin-block-start: 2rem;
+  transition: background-color 0.5s ease;
+}
+
+.orange-btn:hover {
+  background-color: var(--clr-orange-light);
+}
+
+.article {
+  text-align: center;
+  margin-block: 40px;
+}
+
+/* ------ */
+/* Header */
+/* ------ */
+h1 {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-700);
+}
+
+.block>img,
+.block-img {
+  margin-inline-start: auto;
+}
+
+/* ----------- */
+/* Design grid */
+/* ----------- */
+.design-grid {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 1110px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "graphic-design graphic-design"
+    "ui-ux apps"
+    "photography photography"
+    "illustrations illustrations"
+    "motion-graphics motion-graphics";
+}
+
+.graphic-design {
+  background-color: var(--clr-blue);
+  grid-area: graphic-design;
+}
+
+.graphic-design-heading {
+  margin-block-start: 5.125rem;
+}
+
+.ui-ux {
+  background-color: var(--clr-orange);
+  grid-area: ui-ux;
+}
+
+.ui-ux-heading,
+.apps-heading,
+.photography-heading,
+.illustrations-heading,
+.motion-graphics-heading {
+  margin-block-start: 2.25rem;
+}
+
+.apps {
+  background-color: var(--clr--pink);
+  grid-area: apps;
+}
+
+.photography {
+  background-color: var(--clr-cyan);
+  grid-area: photography;
+}
+
+.illustrations {
+  background-color: var(--clr-red);
+  grid-area: illustrations;
+}
+
+.motion-graphics {
+  background-color: var(--clr-purple);
+  grid-area: motion-graphics;
+}
+
+/* --- */
+/* Amy */
+/* --- */
+.amy-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  max-width: 1110px;
+  margin-inline: auto;
+  margin-block: 4rem;
+}
+
+.amy-img {
+  width: clamp(300px, 40vw, 445px);
+  aspect-ratio: 1 / 1;
+}
+
+/* ------- */
+/* My work */
+/* ------- */
+.my-work-heading,
+h2 {
+  margin-block-end: 2.5rem;
+  text-align: center;
+}
+
+.carousel {
+  margin-block: 4rem;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.carousel-viewport {
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 320ms ease;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 270px;
+  width: 270px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-arrow {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.carousel-arrow img {
+  width: 16px;
+  height: 16px;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus {
+  background-color: var(--clr-blue);
+}
+
+.slick-slide {
+  margin: 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+
+/* ------- */
+/* Booking */
+/* ------- */
+.booking-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  border-radius: 10px;
+  padding: 40px 16px;
+  max-width: 1110px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.booking-content>.content-para {
+  color: white;
+}
+
+/* ------ */
+/* Footer */
+/* ------ */
+
+footer {
+  padding-bottom: 24px;
+}
+
+/* ------------ */
+/* Media queries */
+/* ------------ */
+@media (min-width: 48rem) {
+  .design-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "graphic-design graphic-design ui-ux apps"
+      "graphic-design graphic-design illustrations illustrations"
+      "photography photography motion-graphics motion-graphics";
+  }
+
+  .carousel-slide {
+    flex-basis: 540px;
+    width: 540px;
+    height: 360px;
+  }
+
+  .carousel-viewport {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 68.75rem) {
+
+  .black-btn:focus {
+    outline: 2px solid var(--clr-black);
+    outline-offset: 2px;
+  }
+
+  .orange-btn:focus {
+    outline: 2px solid var(--clr-orange);
+    outline-offset: 2px;
+  }
+
+  .amy-container {
+    flex: 0 0 445px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 126px;
+    margin-block: 7.5rem;
+  }
+
+  .amy-container>div:first-child {
+    flex: 0 0 445px;
+  }
+
+  .amey-content {
+    text-align: left;
+  }
+
+  .carousel-arrow:focus {
+    outline: 2px solid var(--clr-black);
+    outline-offset: 2px;
+  }
+
+  .design-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "graphic-design graphic-design ui-ux apps photography photography"
+      "graphic-design graphic-design illustrations illustrations motion-graphics motion-graphics";
+  }
+
+  .carousel-slide {
+    flex-basis: 540px;
+    width: 540px;
+    height: 360px;
+  }
+
+  .carousel-viewport {
+    width: 100vw;
+  }
+
+  .booking-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 64px
+  }
+
+  .booking-content,
+  .booking-content h2 {
+    max-width: 540px;
+    text-align: left;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*  
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-black: #030303;
+  --clr-gray: #6A6662;
+  --clr-off-white: #FFF7F0;
+  --clr-white: #FFFFFF;
+  --clr-red: #E16B5B;
+  --clr-blue: #755CDE;
+  --clr-yellow: #F6A560;
+  --clr--pink: #F39E9E;
+  --clr-cyan: #61C4B7;
+  --clr-purple: #552049;
+
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--clr-off-white);
+  
+}
+
+h2{
+  font-size:2.5rem;
+  font-weight: 700;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-inline-size: 1100px;
+  margin: 0 auto;
+  margin-top: 32px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+button {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  padding: 16px 48px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+}
+
+.black-btn {
+  background-color: var(--clr-black);
+  color: var(--clr-off-white);
+}
+
+.black-btn:hover {
+  background-color: var(--clr-blue);
+}
+
+.article {
+  max-inline-size: 1110px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-one-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 3.625rem;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.color-gray {
+  color: var(--clr-gray);
+  font-size: 1.125rem;
+  line-height: 28px;
+}
+
+
+
+.design-grid {
+  display: grid;
+  gap: 24px;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'graphic-design'
+    'ui-ux'
+    'apps'
+    'photography'
+    'illustration'
+    'motion-graphics';
+  max-inline-size: 1110px;
+  margin: 0 auto;
+}
+
+.grid:nth-child(1) {
+  grid-area: graphic-design;
+}
+
+.grid:nth-child(2) {
+  grid-area: ui-ux;
+}
+
+.grid:nth-child(3) {
+  grid-area: apps;
+}
+
+.grid:nth-child(4) {
+  grid-area: photography;
+}
+
+.grid:nth-child(5) {
+  grid-area: illustration;
+}
+
+.grid:nth-child(6) {
+  grid-area: motion-graphics;
+}
+
+.grid {
+  border-radius: 8px;
+  color: var(--clr-white);
+}
+
+.grid-h2 {
+  font-size: 1.25rem;
+
+}
+
+.grid-img {
+  display: block;
+  margin-left: auto;
+
+}
+
+.graphic-design {
+  background-color: var(--clr-blue);
+  padding: 24px;
+}
+
+
+.ui-ux {
+  background-color: var(--clr-yellow);
+  padding: 20px;
+}
+
+.apps {
+  background-color: var(--clr--pink);
+  padding: 20px;
+}
+
+.photography {
+  background-color: var(--clr-cyan);
+  padding: 20px;
+
+}
+
+.illustrations {
+  background-color: var(--clr-red);
+  padding: 20px;
+}
+
+.motion-graphics {
+  background-color: var(--clr-purple);
+  padding: 20px;
+}
+
+.amy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-inline-size: 1110px;
+  margin: 0 auto;
+  gap: 125px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  padding: 5px;
+}
+
+.amy-img {
+  width: 445px;
+}
+
+.amy-para{
+  color: var(--clr-gray);
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 1.125rem;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .article-one-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+.design-grid{
+  
+  grid-template-areas: 
+    'graphic-design'
+    'ui-ux apps'    
+    'photography'
+    'illustration'
+    'motion-graphics';
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'graphic-design ui-ux apps';
+
+			.grid:nth-child(1) {
+  grid-area: graphic-design;
+}
+
+.grid:nth-child(2) {
+  grid-area: ui-ux;
+}
+			
+    
+	}
+}
+
+  @media screen and (min-width: 1024px) {
+    .design-grid {
+      grid-template-areas:
+        'graphic-design graphic-design ui-ux apps photography photography'
+        'graphic-design graphic-design illustrat
